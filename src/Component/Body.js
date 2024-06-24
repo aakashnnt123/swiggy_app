@@ -1,26 +1,45 @@
 import RestaurantCard from './restCard';
 import './Body.css';
-import { useState } from 'react';
-import resList from '../Util/Mock_data'; 
+import { useState,useEffect } from 'react';
+// import resList from '../Util/Mock_data'; 
 
 
 const Body= () => {
 
-const [ listofRestaurants , filter_list] = useState(resList);
+const [ listofRestaurants , filter_list] = useState([]);
+
+useEffect( () => {
+ fetchData();
+} , []);
+
+const fetchData = async() =>{
+  const data = await fetch(
+    "https://www.swiggy.com/mapi/homepage/getCards?lat=30.73390&lng=76.78890"
+  );
+  // const data = await fetch(
+  //   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING "
+  // );
+ const json = await data.json();
+//  console.log(json)
+
+ filter_list(json?.data?.success?.cards?.[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+// filter_list(json?.data?.cards?.[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+
+}; 
 
 return (
-      <div className="body">
+      <div className="body">  
         <div className="search">search</div>
         <div className="filter">
           <button 
                className="filter-btn"   
                onClick={ ()=> {
-               console.log("button click")    
+              
              const fil_list = listofRestaurants.filter(
-              (res) => res.info.avgRatingString > 4);
+              (res) => res.info.avgRatingString > 4.2);
 
-             filter_list(fil_list);
-           }}>
+              filter_list(fil_list);
+             }}>
             Top rated restaurant
           </button>
         </div>
