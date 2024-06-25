@@ -1,8 +1,8 @@
-import RestaurantCard from './restCard';
+import RestaurantCard from './RestCard';
 import './Body.css';
 import { useState,useEffect } from 'react';
 // import resList from '../Util/Mock_data'; 
-import shimmer from './shimmer';
+import Shimmer from "./Shimmer";
 
 
 const Body= () => {
@@ -29,9 +29,8 @@ const fetchData = async() =>{
 }; 
 
 if(listofRestaurants.length === 0){
-  return <shimmer/>
-
-};
+  return <Shimmer />;
+}
 
 return (
       <div className="body">  
