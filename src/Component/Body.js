@@ -15,7 +15,7 @@ useEffect( () => {
 
 const fetchData = async() =>{
   const data = await fetch(
-    "https://www.swiggy.com/mapi/homepage/getCards?lat=30.73390&lng=76.78890"
+    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.73390&lng=76.78890&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
   );
   // const data = await fetch(
   //   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING "
@@ -23,16 +23,18 @@ const fetchData = async() =>{
  const json = await data.json();
  console.log(json)
 
- filter_list(json?.data?.success?.cards?.[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+ filter_list(json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 // filter_list(json?.data?.cards?.[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 
 }; 
 
-if(listofRestaurants.length === 0){
-  return <Shimmer />;
-}
+// if(listofRestaurants.length === 0){
+//   return <Shimmer />;
+// }
 
-return (
+return listofRestaurants.length === 0 ?(
+  <Shimmer />
+):(
       <div className="body">  
         <div className="search">search</div>
         <div className="filter">

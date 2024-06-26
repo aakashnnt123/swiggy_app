@@ -1,0 +1,42 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    /* background-color: burlywood; */
+    box-sizing: border-box;
+    border-radius: 10px;
+
+}
+.logo{
+    width: 100px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px ;
+}
+.name{
+    margin-top: 10px;
+    font-size: large;
+}
+
+
+.nav-items{
+    padding: 0px 20px;
+}
+
+.nav-items > ul{
+     display : flex;
+     list-style-type:none;
+     
+}
+.nav-items > ul>li{
+    padding: 10px;
+    margin: 10px;
+    font-size: large;
+    font-weight: 900;
+    font-style: italic;
+}
+.login-button{
+    padding: 0 20px;
+    cursor: pointer;
+}

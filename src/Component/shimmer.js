@@ -1,10 +1,18 @@
+import './Shimmer.css';
 const Shimmer = () => {
     return (
     <div className="shimmer-container">
-        <div className="shimmer-cards">CARDS</div>
-        <div className="shimmer-cards">CARDS</div>
-        <div className="shimmer-cards">CARDS</div>
-   </div>
+        <div className="shimmer-cards"></div>
+        <div className="shimmer-cards"></div>
+        <div className="shimmer-cards"></div>
+        <div className="shimmer-cards"></div>
+        <div className="shimmer-cards"></div>
+        <div className="shimmer-cards"></div>
+        <div className="shimmer-cards"></div>
+        <div className="shimmer-cards"></div>
+        <div className="shimmer-cards"></div>
+        <div className="shimmer-cards"></div>
+      </div>
   );
 };
 
