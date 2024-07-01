@@ -1,6 +1,10 @@
 import "./App.css";
 import Header from './Component/Header.js';
 import Body from './Component/Body.js';
+import About from "./Component/About.js";
+import{createBrowserRouter} from "react-router-dom";
+
+
 
 
 const Applayout = () =>{
@@ -11,8 +15,18 @@ const Applayout = () =>{
     </div>
   )
 }
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element : <Applayout/>,
+  },
+  {
+    path:"/about",
+    element: <About/>
+  },
+]);
 
-export default Applayout;
+export default appRouter;
 
 
 
