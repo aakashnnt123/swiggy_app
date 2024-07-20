@@ -22,10 +22,10 @@ const Body = () => {
     console.log(json);
 
     setlistofRestaurants(
-      json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle
+      json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
-    setfilterrestaurant(json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle
+    setfilterrestaurant(json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle
       ?.restaurants);
     
   };
