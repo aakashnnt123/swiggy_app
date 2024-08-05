@@ -7,8 +7,12 @@ import Shimmer from "./Shimmer";
 const Body = () => {
   const [listofRestaurants, setlistofRestaurants] = useState([]);
   const[filterrestaurant, setfilterrestaurant] = useState([])
-  const[searchtext , setsearchtext] = useState(" ");
-
+  const[searchtext , setsearchtext] = useState("");
+   
+  // if no depenndency array => use Effect is called on every render
+  // if dependency array is empty = [] => useEffect is called on initial render(just once)
+  // if dependency array is not-empty = [...] => useEffect is called only when dependency changes.
+   
   useEffect(() => {
     fetchData();
   }, []);
@@ -43,7 +47,7 @@ const Body = () => {
           ></input>
           <button
               onClick={()=>{
-                     console.log(searchtext)
+                    //  console.log(searchtext)
                      const filteredreslist=listofRestaurants.filter(
                       (res) => res.info.name.toLowerCase().includes(searchtext.toLowerCase())
                      );

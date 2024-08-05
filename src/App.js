@@ -8,9 +8,6 @@ import RestaurantMenu from "./Component/RestaurantMenu.js";
 import{createBrowserRouter , Outlet} from "react-router-dom";
 
 
-
-
-
 const Applayout = () =>{
   return(
     <div className="app">
