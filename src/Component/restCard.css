@@ -1,24 +1,114 @@
+/* RestCard.css */
 
-.res-Card{
-    /* border: 2px solid black; */
-    width: 220px;
-    margin: 10px;
-    border-radius: 10px;
-    box-sizing:border-box;
-    background-color: rgba(209,126,10,1);
-
-}
-.food-img{
-    width: 100%;
-    height: 40%;
-   
-    border-radius: 8px;
-}
-.res-Card:hover{
+.res-Card {
+    width: 340px;
+    height: 440px;
+    background: linear-gradient(135deg, #f9f9f9, #eaeaea);
+    border-radius: 25px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     cursor: pointer;
-    border: 5px solid black;
+    position: relative;
 }
-.res-details{
+
+.res-Card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 12px 12px rgba(0, 0, 0, 0.15);
+}
+
+.food-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 2px solid #dcdcdc;
+    border-radius: 25px 25px 0 0;
+    transition: transform 0.4s ease;
+}
+
+.res-Card:hover .food-img {
+    transform: scale(1.05);
+}
+
+.res-details {
+    padding: 10px;
+    flex-grow: 1;
+    /* display: flex;
+    flex-direction: column; */
+   
+}
+
+.res-details h2 {
+    font-size: 1.7rem;
+    margin-bottom: 5px;
+    color: #0d0d0d;
+    /* text-decoration: none; */
+    font-weight: 600;
+    letter-spacing: 0.6px;
+}
+
+.res-details h4 {
+    font-size: 1.1rem;
+    margin: 0px 0;
+    color: #0f2c2e;
+    font-weight: 400;
+    text-decoration: none;
+    letter-spacing: 0.4px;
+    transition: color 0.3s ease;
+}
+
+.res-details h4:first-of-type {
+    color: #0f2c2e;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.res-details h4:last-of-type {
     margin-top: 0px;
-    margin-left: 3px;
+    font-weight: 500;
+    color: #0f2c2e;
+    text-decoration: none;
 }
+
+.res-Card .res-details h4 {
+    line-height: 1.7;
+    text-decoration: none;
+}
+
+/* Remove underlines from links and apply subtle hover effect */
+.res-details a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.res-details a:hover {
+    color: #3498db;
+    text-decoration: none; /* Ensure no underline on hover */
+}
+
+/* Add gradient overlay effect on hover */
+.res-Card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 25px;
+}
+
+.res-Card:hover::before {
+    opacity: 1;
+}
+
+

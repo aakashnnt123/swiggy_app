@@ -1,42 +1,69 @@
-.header{
+/* Header Container */
+.header {
     display: flex;
     justify-content: space-between;
-    border: 2px solid black;
-    /* background-color: burlywood; */
-    box-sizing: border-box;
-    border-radius: 10px;
-
-}
-.logo{
-    width: 100px;
-    height: 100%;
-    justify-content: center;
     align-items: center;
-    border-radius: 10px ;
-}
-.name{
-    margin-top: 10px;
-    font-size: large;
-}
-
-
-.nav-items{
-    padding: 0px 20px;
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Keeps header above other content */
 }
 
-.nav-items > ul{
-     display : flex;
-     list-style-type:none;
-     
+/* Logo Container */
+.logo-container {
+    flex-shrink: 0; /* Prevents logo from shrinking */
 }
-.nav-items > ul>li{
-    padding: 10px;
-    margin: 10px;
-    font-size: large;
-    font-weight: 900;
-    font-style: italic;
+
+.logo {
+    height: 60px; /* Adjust logo size */
+    transition: transform 0.3s ease;
 }
-.login-button{
-    padding: 0 20px;
+
+.logo:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Navigation Items */
+.nav-items ul {
+    list-style-type: none;
+    display: flex;
+    gap: 25px; /* Spacing between links */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-items li {
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase; /* Uppercase for a modern look */
+}
+
+.nav-items a {
+    color: #2c3e50; /* Dark text color */
+    text-decoration: none; /* Remove underline from links */
+    transition: color 0.3s ease;
+}
+
+.nav-items a:hover {
+    color: #3498db; /* Change color on hover */
+}
+
+/* Login/Logout Button */
+.login-button {
+    padding: 10px 20px;
+    background-color: #3498db; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Rounded button */
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #2980b9; /* Darker button on hover */
+    transform: translateY(-2px); /* Lift button on hover */
 }
