@@ -39,13 +39,13 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
         <div className="search">
           <input type="text" className="search-box" value={searchtext} onChange={(e) =>{
                      setsearchtext(e.target.value);
           }}
 
           ></input>
+          
           <button
               onClick={()=>{
                     //  console.log(searchtext)
@@ -58,6 +58,7 @@ const Body = () => {
           >
            search</button>
         </div>
+        <div className="filter">
         <button
           className="filter-btn"
           onClick={() => {
