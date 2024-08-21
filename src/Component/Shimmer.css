@@ -11,7 +11,7 @@
 .shimmer-cards {
     width: 340px;  /* Match the RestaurantCard width */
     height: 400px; /* Match the RestaurantCard height */
-    background: linear-gradient(135deg, #dddbdb, #c6c3c3);
+    background: linear-gradient(135deg, #dddbdb,   #c6c3c3);
     border-radius: 25px;
     overflow: hidden;
     position: relative;
