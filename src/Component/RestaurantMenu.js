@@ -20,7 +20,7 @@ const RestaurantMenu = () =>{
         const data = await fetch (menu_api + resid);
         const json = await data.json(data)
         console.log(json);
-
+        console.log(json);
         setresInfo(json.data)
     };
     if(resInfo === null)return <Shimmer/>
