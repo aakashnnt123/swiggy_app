@@ -68,7 +68,7 @@
 
 /* Button hover and active effect */
 .search button:hover {
-    background-color: #2980b9;
+    background-color: #0056b3;
     transform: scale(1.05);
 }
 
@@ -94,4 +94,43 @@
         border-radius: 50px;
     }
 }
-
+/* Style for the filter container */
+.filter {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    padding: 20px; /* Add some padding around the filter area */
+    background-color: #f9f9f9; /* Light background color for the filter container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a lifted effect */
+  }
+  
+  /* Style for the filter button */
+  .filter-btn {
+    background-color: #2980b9; /* Primary button color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for the button */
+    padding: 12px 24px; /* Padding for a larger button */
+    font-size: 16px; /* Font size for the button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for hover effects */
+  }
+  
+  /* Hover effect for the button */
+  .filter-btn:hover {
+    background-color: #0056b3; /* Darker shade of primary color on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+  }
+  
+  /* Focus effect for the button (for accessibility) */
+  .filter-btn:focus {
+    outline: 3px solid #0056b3; /* Outline for better visibility when focused */
+    outline-offset: 2px; /* Offset the outline slightly from the button */
+  }
+  
+  /* Active effect for the button */
+  .filter-btn:active {
+    background-color: #004080; /* Even darker shade of primary color when button is pressed */
+    transform: scale(0.98); /* Slightly shrink the button when pressed */
+  }
+  

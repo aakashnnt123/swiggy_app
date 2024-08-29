@@ -14,6 +14,7 @@ const User = (props)=>{
         
     // }
     // const[Count2 , SetCount2] = useState(1);
+
     return(
     <div className="user-card">
         <h1>Count = {Count}</h1>

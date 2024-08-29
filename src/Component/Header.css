@@ -47,7 +47,7 @@
 }
 
 .nav-items a:hover {
-    color: #3498db; /* Change color on hover */
+    color: #0056b3; /* Change color on hover */
 }
 
 /* Login/Logout Button */
@@ -64,6 +64,6 @@
 }
 
 .login-button:hover {
-    background-color: #2980b9; /* Darker button on hover */
+    background-color:#0056b3; /* Darker button on hover */
     transform: translateY(-2px); /* Lift button on hover */
 }
