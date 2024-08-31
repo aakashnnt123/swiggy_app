@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 5px;
     background-color: #f8f9fa; /* Light background */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     position: sticky;
@@ -12,12 +12,13 @@
 }
 
 /* Logo Container */
-.logo-container {
-    flex-shrink: 0; /* Prevents logo from shrinking */
-}
+
+/* .logo-container {
+    flex-shrink: 0; /* Prevents logo from shrinking  } */
+
 
 .logo {
-    height: 60px; /* Adjust logo size */
+    height: 80px; /* Adjust logo size */
     transition: transform 0.3s ease;
 }
 
@@ -52,7 +53,7 @@
 
 /* Login/Logout Button */
 .login-button {
-    padding: 10px 20px;
+    padding: 3px 20px;
     background-color: #3498db; /* Button color */
     color: white;
     border: none;
