@@ -21,7 +21,7 @@ const About = lazy(()=>import("./Component/About.js"))
 
 const Applayout = () =>{
   return(
-    <div className="app">
+    <div className=" bg-slate-100">
         <Header/>
         <Outlet/>
     </div>
