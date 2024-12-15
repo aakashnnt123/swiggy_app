@@ -10,6 +10,9 @@ export const menu_api=
 export const IMG_URL =
 "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/";
 
+export const Coming_soon_URL =
+ "https://www.shutterstock.com/image-vector/coming-soon-letter-hanging-door-260nw-2497993761.jpg";
+
 
 
 

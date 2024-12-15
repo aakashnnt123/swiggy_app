@@ -20,7 +20,7 @@ function Header() {
       <div className="nav-items flex items-center space-x-6">
         <ul className="flex items-center space-x-6 text-gray-600">
           <li className="flex items-center font-bold">
-            Online-Status: {online_status ? "🟢" : "🔴"}
+            Online-Status: {online_status ? "🟢(Online)" : "🔴(Offline)"}
           </li>
           <li>
             <Link to="/" className="hover:text-black font-bold">HOME🏠</Link>

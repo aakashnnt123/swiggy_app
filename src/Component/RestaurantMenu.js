@@ -5,12 +5,15 @@ import { useParams } from "react-router-dom";
 import useRestaurantmenu from "../Util/useRestaurantmenu";
 // import "./RestaurantMenu.css";
 import RestaurantCategory from "./ResCategory.js";
+import { useState } from "react";
 
 
 
 const RestaurantMenu = () =>{  
 
 //  const[resInfo,setresInfo] = useState(null);
+
+const [ showindex , setshowindex] = useState()
 
  const {resid}=useParams();
 
@@ -59,11 +62,20 @@ const RestaurantMenu = () =>{
         <p className="text-black-600 text-l font-semibold">
           {cuisines.join(', ')} - <span className="font-semibold">{costForTwoMessage}</span>
         </p>
-      </div>
+      </div >
          {/* categories accordions */}
-         {categories.map((category) => (
-                <RestaurantCategory data = {category?.card?.card} />
+      
+      {categories.map((category ,index) => (
+                <RestaurantCategory 
+                key ={category?.card?.card?.title} 
+                data = {category?.card?.card} 
+                showitems = {index === showindex ? true : false}
+                setshowindex = {() => setshowindex(index)}
+                />
+                
             ))}
+    
+        
     </div>
         
     ) ;

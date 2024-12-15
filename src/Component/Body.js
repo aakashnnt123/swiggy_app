@@ -37,14 +37,21 @@ const Body = () => {
   };
   const OnlineStatus = useOnlineStatus();
 
-  if(OnlineStatus === false)
-    return(
-      <h1 className="text-3xl font-bold text-red-500 text-center mb-4">
-      Looks like you're offline!! Please check your internet Connection;
-    </h1>);
+  if (OnlineStatus === false) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-slate-100 mt-24">
+        <h1 className="text-3xl text-black font-bold  px-4 text-center">
+          Looks like you're offline!! Please check your internet Connection;
+        </h1>
+        <Shimmer/>
+      </div>
+    );
+  }
+  
+     
 
  return listofRestaurants.length === 0 ? (
-    <Shimmer />
+    <Shimmer/>
   ) : (
     <div className="body">
 

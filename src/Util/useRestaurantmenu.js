@@ -11,7 +11,7 @@ const useRestaurantmenu = (resid)=>
     } ,[]);
 
     const fetchData = async() =>{
-        const data =   await fetch(menu_api + resid);
+        const data =   await fetch(menu_api+resid);
         const json = await data.json();
         setresInfo(json.data);
     }; 
