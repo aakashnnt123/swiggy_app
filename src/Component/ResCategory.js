@@ -1,14 +1,14 @@
 // import "./ResCategory.css";
-// import { useState } from "react";
+import { useState } from "react";
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({data , showitems , setshowindex}) =>{
+const RestaurantCategory = ({data}) =>{
     
 
-    // const[showitems , Setshowitems] = useState(false);
+    const[showitems , Setshowitems] = useState(false);
 
     const handleClick=()=>{
-        setshowindex()
+      Setshowitems(!showitems)
     }
     
     return <div>

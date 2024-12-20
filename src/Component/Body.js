@@ -21,7 +21,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.7630356&lng=76.6528225&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTI"
+         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.67400&lng=76.72490&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
   
     const json = await data.json();
@@ -105,7 +105,6 @@ const Body = () => {
     >
       <RestaurantCard 
         resData={restaurants} 
-        className=""
       />
     </Link>
   ))}
