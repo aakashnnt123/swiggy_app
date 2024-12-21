@@ -1,9 +1,10 @@
 
 import { LOGO_URL } from '../Util/Constants.js';
-import { useState } from 'react';
+import { useState , useContext } from 'react';
 import { Link } from 'react-router-dom';
 // import "./Header.css";
 import useOnlineStatus from '../Util/useOnlineStatus.js';
+import UserContext from '../Util/UserContext.js';
 
 function Header() {
 
@@ -11,6 +12,9 @@ function Header() {
   const[btnNameReact,setbtnNameReact]=useState("Login👆")
 
   const online_status = useOnlineStatus();
+  
+  const data = useContext(UserContext);
+  console.log(data);
 
     return (
       <div className="header flex items-center justify-between bg-white shadow-md p-4 h-24 fixed w-full top-0 z-50">
@@ -35,16 +39,16 @@ function Header() {
             <Link to="/grocery" className="hover:text-black font-bold">GROCERY</Link>
           </li>
           <li className="hover:text-black font-bold">CART🛒</li>
-        </ul>
+        
         <button className="login-button bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-700" onClick={() => {
             setbtnNameReact(btnNameReact === "Login👆" ? "Logout👆" : "Login👆")
         }}>
           {btnNameReact}
         </button>
+      <li className='text-black font-bold'>{data.loggedInUser}👤</li>
+      </ul>
       </div>
     </div>
-    
-
     );
   }
 

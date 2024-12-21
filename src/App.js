@@ -7,7 +7,8 @@ import Error from "./Component/Error.js";
 import RestaurantMenu from "./Component/RestaurantMenu.js";
 import{createBrowserRouter , Outlet} from "react-router-dom";
 // import Grocery from "./Component/Grocery.js";
-import { lazy , Suspense } from "react";
+import { lazy , Suspense, useEffect, useState } from "react";
+import UserContext from "./Util/UserContext.js";
 
 //chunking
 //Code Splitting
@@ -20,11 +21,23 @@ const Grocery = lazy(()=>import("./Component/Grocery.js"));
 const About = lazy(()=>import("./Component/About.js"))
 
 const Applayout = () =>{
+
+const [UserInfo ,SetUserInfo]=useState();
+
+useEffect(()=>{
+  const data ={
+    name:"Aakash",
+  }
+  SetUserInfo(data.name);
+},[])
   return(
-    <div className=" bg-slate-100">
+    <UserContext.Provider value={{loggedInUser : UserInfo}}>
+      <div className=" bg-slate-100">
         <Header/>
         <Outlet/>
     </div>
+    </UserContext.Provider>
+    
   )
 }
 const appRouter = createBrowserRouter([
