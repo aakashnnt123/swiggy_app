@@ -1,20 +1,21 @@
 // import "./ResCategory.css";
-import { useState } from "react";
+// import { useState } from "react";
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({data}) =>{
+const RestaurantCategory = ({data , showitems ,setshowindex }) =>{
     
 
-    const[showitems , Setshowitems] = useState(false);
+    // const[showitems , Setshowitems] = useState(false);
 
     const handleClick=()=>{
-      Setshowitems(!showitems)
+      setshowindex();
     }
     
     return <div>
        
         {/* Header */}
-<div className=" bg-gray-200 mb-3 mt-5 p-4 ml-[250px] mr-[250px] rounded-lg shadow-m cursor-pointer " onClick= {handleClick}>
+<div className=" bg-gray-200 mb-3 mt-5 p-4 ml-[250px] mr-[250px] rounded-lg shadow-m cursor-pointer "
+on onClick={handleClick}>
   <div className="flex justify-between items-center  " >
     <span className="font-bold text-lg text-gray-800">{data.title} ({data.itemCards.length})</span>
     <span className="arrow transition-transform duration-300">▼</span>

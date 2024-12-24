@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 // import "./Header.css";
 import useOnlineStatus from '../Util/useOnlineStatus.js';
 import UserContext from '../Util/UserContext.js';
+import { useSelector } from 'react-redux';
 
 function Header() {
 
@@ -15,6 +16,8 @@ function Header() {
   
   const data = useContext(UserContext);
   console.log(data);
+
+  const cartItems = useSelector((store)=>store.cart.items);
 
     return (
       <div className="header flex items-center justify-between bg-white shadow-md p-4 h-24 fixed w-full top-0 z-50">
@@ -38,7 +41,7 @@ function Header() {
           <li>
             <Link to="/grocery" className="hover:text-black font-bold">GROCERY</Link>
           </li>
-          <li className="hover:text-black font-bold">CART🛒</li>
+          <li className="hover:text-black font-bold">CART🛒({cartItems.length})</li>
         
         <button className="login-button bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-700" onClick={() => {
             setbtnNameReact(btnNameReact === "Login👆" ? "Logout👆" : "Login👆")

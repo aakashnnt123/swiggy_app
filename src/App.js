@@ -1,14 +1,14 @@
 import "./App.css";
 import Header from './Component/Header.js';
 import Body from './Component/Body.js';
-// import About from "./Component/About.js";
 import Contact from "./Component/Contact.js";
 import Error from "./Component/Error.js";
 import RestaurantMenu from "./Component/RestaurantMenu.js";
 import{createBrowserRouter , Outlet} from "react-router-dom";
-// import Grocery from "./Component/Grocery.js";
 import { lazy , Suspense, useEffect, useState } from "react";
 import UserContext from "./Util/UserContext.js";
+import { Provider } from "react-redux";
+import AppStore from "./Util/AppStore.js";
 
 //chunking
 //Code Splitting
@@ -31,15 +31,19 @@ useEffect(()=>{
   SetUserInfo(data.name);
 },[])
   return(
-    <UserContext.Provider value={{loggedInUser : UserInfo}}>
+    <Provider store ={AppStore}>
+      <UserContext.Provider value={{loggedInUser : UserInfo}}>
       <div className=" bg-slate-100">
         <Header/>
         <Outlet/>
     </div>
     </UserContext.Provider>
+    </Provider>
     
-  )
-}
+    
+  );
+};
+
 const appRouter = createBrowserRouter([
   {
     path: "/",
