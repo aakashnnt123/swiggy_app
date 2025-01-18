@@ -41,7 +41,13 @@ function Header() {
           <li>
             <Link to="/grocery" className="hover:text-black font-bold">GROCERY</Link>
           </li>
-          <li className="hover:text-black font-bold">CART🛒({cartItems.length})</li>
+          <li>
+    <Link to="Cart" className="hover:text-black font-bold">
+        CART🛒({cartItems.length})
+    </Link>
+</li>
+
+
         
         <button className="login-button bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-700" onClick={() => {
             setbtnNameReact(btnNameReact === "Login👆" ? "Logout👆" : "Login👆")

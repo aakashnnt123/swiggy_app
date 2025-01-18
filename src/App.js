@@ -9,6 +9,7 @@ import { lazy , Suspense, useEffect, useState } from "react";
 import UserContext from "./Util/UserContext.js";
 import { Provider } from "react-redux";
 import AppStore from "./Util/AppStore.js";
+import Cart from "./Component/Cart.js";
 
 //chunking
 //Code Splitting
@@ -72,6 +73,10 @@ const appRouter = createBrowserRouter([
       {
         path:"/restautants/:resid",
         element: <RestaurantMenu/>,
+      },
+      {
+        path:"/cart",
+        element: <Cart/>,
       },
     ],
     errorElement: <Error/>,

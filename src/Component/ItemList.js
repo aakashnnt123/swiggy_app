@@ -4,6 +4,7 @@ import { additem } from "../Util/CartSlice";
 
 const ItemList = ({ items }) => {
   const dispatch = useDispatch();
+  console.log(ItemList);
 
   const HandleAddItem = (itemName) => {
     dispatch(additem(itemName));
