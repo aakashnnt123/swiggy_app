@@ -15,12 +15,13 @@ function Header() {
   const online_status = useOnlineStatus();
   
   const data = useContext(UserContext);
-  console.log(data);
+  // console.log(data);
 
   const cartItems = useSelector((store)=>store.cart.items);
+  console.log(cartItems);
 
     return (
-      <div className="header flex items-center justify-between bg-white shadow-md p-4 h-24 fixed w-full top-0 z-50">
+      <div className="header flex items-center justify-between bg-white shadow-md p-4 fixed w-full top-0 z-50">
       <div className="logo-container">
         <img className="logo h-17 w-16 object-contain" src={LOGO_URL} alt="img" />
       </div>

@@ -4,11 +4,11 @@ import { additem } from "../Util/CartSlice";
 
 const ItemList = ({ items }) => {
   const dispatch = useDispatch();
-  console.log(ItemList);
+  // console.log(ItemList);
 
-  const HandleAddItem = (itemName) => {
-    dispatch(additem(itemName));
-    console.log(`Item added: ${itemName}`);
+  const HandleAddItem = (item) => {
+    dispatch(additem(item));
+    console.log(`Item added: ${item.card.info.name}`);
   };
 
   return (
@@ -39,7 +39,7 @@ const ItemList = ({ items }) => {
               />
               <button
                 className="absolute bottom-2 left-1/2 transform -translate-x-1/2 p-2 rounded-lg bg-black shadow-lg bg-opacity-70 text-white hover:bg-opacity-90"
-                onClick={() => HandleAddItem(item.card.info.name)}
+                onClick={() => HandleAddItem(item)}
               >
                 ADD
               </button>

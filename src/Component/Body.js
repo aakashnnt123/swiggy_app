@@ -56,10 +56,11 @@ const Body = () => {
     <div className="body">
 
     {/* Search Bar */}
-    <div className="search flex items-center bg-white shadow-lg rounded-lg py-2 px-4 max-w-md mx-auto my-4 mt-24">
+    <div className="search flex items-center bg-white shadow-lg rounded-lg py-2 px-4 max-w-md mx-auto my-4 mt-24 ">
   <input
     type="text"
-    className="search-box w-full pl-4 pr-10 text-lg text-gray-700"
+    className="search-box  border-none outline-none w-full pl-4 pr-10 text-lg text-gray-700"
+    placeholder="search your favourite dish..😋"
     value={searchtext}
     onChange={(e) => {
       setsearchtext(e.target.value);
