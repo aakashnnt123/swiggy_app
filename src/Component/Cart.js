@@ -25,7 +25,7 @@ const Cart =()=>{
   </h1>
 )}
     <div className="bg-gray-200 mb-3 mt-5 p-4 ml-[250px] mr-[250px] rounded-lg shadow-m">
-      <ItemList items={cartItems} />
+      <ItemList items={cartItems } />
     </div>
   </div>
   
